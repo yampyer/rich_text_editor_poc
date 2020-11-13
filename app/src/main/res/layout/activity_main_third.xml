@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="AREditor"
+        android:layout_marginTop="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_type"
+        app:layout_constraintBottom_toTopOf="@+id/bottombar"
+        android:background="@android:color/white">
+
+        <com.chinalwb.are.AREditText
+            android:id="@+id/arEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|left"
+            android:hint="Your EditText goes here"
+            android:textSize="50sp" />
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottombar"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:weightSum="1000">
+
+        <com.chinalwb.are.styles.toolbar.ARE_ToolbarDefault
+            android:id="@+id/areToolbar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="900"
+            android:background="@color/colorPrimary"
+            android:gravity="center_vertical" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="95"
+            android:background="@color/colorAccent"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/arrow"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@android:drawable/arrow_down_float" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
